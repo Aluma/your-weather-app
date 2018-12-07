@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+    <header class="header">
+        <div class="search">
+            <input type="text" placeholder="Enter City Name" id="search-txt" minlength="2" maxlength="45" required>
+            <a id="search-btn" href="#"><i class="fas fa-search fa-lg"></i></a>
+        </div>
+    </header>
+    <main id="main">
+        <div class="city-icon">
+            <div class="city-icon-holder">
+                <div id="city-name"></div>
+                <img src="" alt="" id="icon">
+            </div>
+        </div>
+        <div class="temperature">
+            <div id="temp"></div>
+        </div>
+    </main>
+</div>
+<script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
+<script src="main.js"></script>
+</body>
+
+</html>
