@@ -1,7 +1,7 @@
 # your-weather-app
 
 This is a simple JavaScript ES6+ weather app that takes a city name and returns the current weather for that city by using the 
-openweathermap API. I have consciously chosen to make this app as minimal. There are no libraries, frameworks, tests,
+openweathermap API. I have consciously chosen to make this app minimal. There are no libraries, frameworks, tests,
 task runners, build tools, etc.
 
 Tech used:
