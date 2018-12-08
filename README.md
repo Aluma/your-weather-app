@@ -4,11 +4,15 @@ This is a simple JavaScript ES6+ weather app that takes a city name and returns 
 openweathermap API. I have consciously chosen to make this app as minimal. There are no libraries, frameworks, tests,
 task runners, build tools, etc.
 
-Tech used: 
+Tech used:
+
 JavaScript ES6+
+
 HTML5
+
 CSS3
-GitHub
+
+
 
 DEMO:
 https://aluma.github.io/your-weather-app/index.html
