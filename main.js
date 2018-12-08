@@ -10,34 +10,35 @@ const temperature = document.getElementById('temp');
 
 
 /**
- * @function - Makes an asynchronous http request.
- * @param {string} url - The url to call and make the request.
- * @param {function} callback - Invoked if http request is successful and passes the response to it.
+ * @function - Parses the weather data and grabs the city name, temperature and icon to display on the UI.
+ * @param {string} data - Parsed JSON object with weather data.
  */
-const makeAsyncHttpRequest = (url, callback) => {
-    const request = new XMLHttpRequest();
-    request.onreadystatechange = () => {
-        if (request.readyState === 4 && request.status === 200) {
-            callback(request.responseText);
-        }
-        else {
-            console.log('REQUEST STATUS:', request.status);
-        }
-    };
-    request.open('GET', url, true);
-    request.send();
+const setWeatherResponse = (data) => {
+    cityName.innerHTML = data.name;
+    icon.src = 'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
+    temperature.innerHTML = parseInt(data.main.temp) + '°F';
 };
 
 /**
- * @function - Parses the weather response and grabs the city name, temperature and icon to display on the UI.
- * @param {string} response - Stringified JSON object with weather data.
+ * @function - Makes an asynchronous http request.
+ * @param {string} url - The url to call and make the request.
  */
-const setWeatherResponse = (response) => {
-    const jsonObject = JSON.parse(response);
-    cityName.innerHTML = jsonObject.name;
-    icon.src = 'http://openweathermap.org/img/w/' + jsonObject.weather[0].icon + '.png';
-    temperature.innerHTML = parseInt(jsonObject.main.temp) + '°F';
+const makeAsyncHttpRequest = (url) => {
+    fetch(url)
+        .then(response => {
+            if (response.status !== 200) {
+                console.log('Looks like there was a problem. Status Code: ' + response.status);
+                return;
+            }
+            response.json().then(data => {
+                setWeatherResponse(data);
+            });
+        })
+        .catch(err => {
+            console.log('Fetch Error :-S', err);
+        });
 };
+
 
 /**
  * @function - Checks for valid input then builds the request query string, passes it to the http request
@@ -49,7 +50,7 @@ const getWeatherData = () => {
     } else {
         const apiQueryString = 'https://api.openweathermap.org/data/2.5/weather?q=' + searchInput.value +
             '&units=imperial' + '&appid=' + apiKey;
-        makeAsyncHttpRequest(apiQueryString, setWeatherResponse);
+        makeAsyncHttpRequest(apiQueryString);
     }
 };
 
@@ -65,4 +66,3 @@ const isSearchExecuted = (event) => {
 
 searchInput.addEventListener('keyup', isSearchExecuted);
 searchButton.addEventListener('click', getWeatherData);
-

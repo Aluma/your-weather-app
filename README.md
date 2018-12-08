@@ -17,5 +17,8 @@ CSS3
 DEMO:
 https://aluma.github.io/your-weather-app/index.html
 
-<img src="https://i.ibb.co/hHpPcKs/Screen-Shot-2018-12-07-at-6-34-12-PM.png" alt="weather app UI" border="0">
-<img src="https://i.ibb.co/HtjpfJL/Screen-Shot-2018-12-07-at-6-34-53-PM.png" alt="showing Chicago weather" border="0">
+
+<img src="https://i.ibb.co/9GVC8B5/Screen-Shot-2018-12-08-at-12-55-59-AM.png" alt="Screen-Shot-2018-12-08-at-12-55-59-AM" border="0">
+<br>
+<br>
+<img src="https://i.ibb.co/8MMhJ9h/Screen-Shot-2018-12-08-at-12-56-30-AM.png" alt="Screen-Shot-2018-12-08-at-12-56-30-AM" border="0">

@@ -1,5 +1,11 @@
-body {
+body, html {
     background-color: #eee;
+    width: 100%;
+    height: 100%;
+}
+
+.center {
+    text-align: center;
 }
 
 .city {
@@ -10,8 +16,9 @@ body {
 
 .city-icon-holder {
     position: absolute;
+    width: 50%;
     left: 25%;
-    top: 40%;
+    top: 20%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
@@ -26,17 +33,21 @@ body {
 
 .container {
     background: #bd8c7d;
-    width: 80%;
-    min-width: 320px;
-    max-width: 500px;
-    height: 300px;
-    margin: 25vh auto;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
     padding-top: 5px;
     box-shadow: 0 20px 40px 0 rgba(0,0,0,0.3)
 }
 
-.center {
-    text-align: center;
+.dont-break-out {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
 }
 
 h1 {
@@ -45,13 +56,11 @@ h1 {
 
 .header {
     height: 20%;
+    min-height: 50px;
+    max-height: 100px;
     background-color: #49494b;
     text-align: center;
     position: relative;
-}
-
-#icon {
-    width: 75%;
 }
 
 #main {
@@ -87,13 +96,14 @@ h1 {
 }
 
 #temp {
+    position: absolute;
     font-family: "Helvetica", serif, sans-serif;
     font-weight: bold;
-    font-size: 3em;
+    font-size: 2rem;
+    text-align: center;
     color: #49494b;
-    position: absolute;
     left: 50%;
-    top: 40%;
+    top: 20%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
