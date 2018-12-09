@@ -66,3 +66,4 @@ const isSearchExecuted = (event) => {
 
 searchInput.addEventListener('keyup', isSearchExecuted);
 searchButton.addEventListener('click', getWeatherData);
+searchButton.addEventListener('keyup', getWeatherData);

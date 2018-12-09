@@ -2,12 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0"
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <meta name="theme-color" content="#bd8c7d"/>
+    <meta name="author" content="Jimmy Thanki">
+    <meta name="description" content="Progressive Web Weather Application">
+    <meta name="keywords" content="JavaScript, ES6, Weather App, openweathermap.org, HTML, CSS">
     <title>Your Weather App</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="style.css" media="all">
+    <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
@@ -15,29 +20,40 @@
 
     <noscript>Please enable JavaScript in your browser so that this app can function correctly.</noscript>
 
-    <h1 class="center">Your Weather App</h1>
+    <div role="heading"><h1 class="center">Your Weather App</h1></div>
     <header class="header">
         <div class="search">
-            <input id="search-txt" maxlength="45" minlength="2" placeholder="Enter City Name" type="text" required>
-            <a href="#" id="search-btn"><i class="fas fa-search fa-lg"></i></a>
+            <input id="search-txt" maxlength="45" minlength="2" placeholder="Enter City Name" type="text"
+                   role="searchbox" aria-label="enter city name here" required>
+            <a href="#" id="search-btn" name="search button" role="button" aria-label="search button"><i
+                    class="fas fa-search fa-lg">
+            </i></a>
         </div>
     </header>
 
-    <main id="main">
+    <main id="main" role="main">
         <div class="city">
             <div class="city-icon-holder">
-                <div class="dont-break-out" id="city-name"></div>
-                <img alt="" id="icon" src="">
+                <div class="dont-break-out" id="city-name" aria-label="city name text"></div>
+                <img alt="" id="icon" src="" role="img" aria-label="weather icon">
             </div>
         </div>
         <div class="temperature">
-            <div class="dont-break-out" id="temp"></div>
+            <div class="dont-break-out" id="temp" aria-label="current temperature text"></div>
         </div>
     </main>
 
 </div>
 <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
 <script src="main.js"></script>
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js')
+            .then(function () {
+                console.log('Service Worker Registered');
+            });
+    }
+</script>
 </body>
 
 </html>

@@ -1,3 +1,6 @@
 # IntelliJ
 out/
 .idea
+
+# Others
+.DS_Store

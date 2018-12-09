@@ -9,22 +9,27 @@ body, html {
 }
 
 .city {
-    height: 80%;
-    width: 50%;
+    position: relative;
+    margin: auto;
+    height: 25%;
+    width: 100%;
+    top: 10%;
     background-color: #bd8c7d;
 }
 
 .city-icon-holder {
     position: absolute;
+    margin: auto;
     width: 50%;
-    left: 25%;
-    top: 20%;
+    left: 50%;
+    top: 25%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
 }
 
 #city-name {
+    margin: auto;
     font-family: "Helvetica", serif, sans-serif;
     font-size: 2em;
     font-weight: bold;
@@ -55,17 +60,18 @@ h1 {
 }
 
 .header {
+    position: relative;
+    margin: auto;
     height: 20%;
     min-height: 50px;
     max-height: 100px;
     background-color: #49494b;
     text-align: center;
-    position: relative;
 }
 
 #main {
-    height: 100%;
     position: relative;
+    height: 100%;
 }
 
 .search {
@@ -109,10 +115,9 @@ h1 {
 }
 
 .temperature {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    height: 80%;
-    width: 50%;
+    position: relative;
+    margin-top: 10px;
+    height: 25%;
+    width: 100%;
     background-color: #bd8c7d;
 }
