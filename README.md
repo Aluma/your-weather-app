@@ -18,16 +18,18 @@ DEMO:
 https://aluma.github.io/your-weather-app/index.html
 <br>
 <br>
+Lighthouse Audit Report:
+<br>
+<img src="https://i.ibb.co/sbzMmXk/lighthouse-audit-report.png" alt="Lighthouse audit report" border="0">
+<br>
+<br>
 Before weather search:
 <br>
-<img src="https://i.ibb.co/9GVC8B5/Screen-Shot-2018-12-08-at-12-55-59-AM.png" border="0">
+<img src="https://i.ibb.co/9GVC8B5/Screen-Shot-2018-12-08-at-12-55-59-AM.png" alt="app screenshot" border="0">
 <br>
 <br>
 After weather search:
 <br>
-<img src="https://i.ibb.co/8MMhJ9h/Screen-Shot-2018-12-08-at-12-56-30-AM.png" border="0">
+<img src="https://i.ibb.co/NWgvG0v/Screen-Shot-2018-12-10-at-1-22-28-AM.png" alt="search result screenshot" border="0">
 <br>
 <br>
-Lighthouse Audit Report:
-<br>
-<img src="https://i.ibb.co/VD1yYtG/Screen-Shot-2018-12-08-at-11-14-16-PM.png" border="0">
