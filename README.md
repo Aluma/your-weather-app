@@ -14,6 +14,15 @@ CSS3
 
 <br>
 
+Instructions:
+
+1) Download the repo ZIP file, or clone the repo:
+https://github.com/Aluma/your-weather-app.git
+
+2) Open the index.html file in one of the popular browsers.
+
+That's it! :-)
+
 DEMO:
 https://aluma.github.io/your-weather-app/index.html
 <br>
