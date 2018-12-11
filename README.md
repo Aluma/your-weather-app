@@ -1,7 +1,6 @@
 # your-weather-app
 
-This is a simple JavaScript ES6+ PWA (Progressive Web Application) weather app that takes a city name and returns the current weather for that city by using the 
-openweathermap API. I have consciously chosen to make this app minimal. There are no libraries (unless you want to count FontAwesome), frameworks, tests, task runners, build tools, etc.
+This is a simple JavaScript ES6+ PWA (Progressive Web Application) weather app that takes a city name and returns the current weather for that city by using the openweathermap API. I have consciously chosen to make this app minimal. There are no libraries (unless you want to count FontAwesome), frameworks, tests, task runners, build tools, etc.
 
 Tech used:
 
@@ -10,7 +9,7 @@ JavaScript ES6+
 HTML5
 
 CSS3
-
+______________________________________________________________________________________________________________________________
 
 Instructions:
 
@@ -22,10 +21,12 @@ https://github.com/Aluma/your-weather-app.git
 3) Enter city name in the appropriate field and execute the search via 'Enter' key or clicking/tapping the search icon. Please enter city name only; no state. This is due to a limitation of the openweathermap API as detailed below.
 
 That's it! :-)
+_____________________________________________________________________________________________________________________________
 
 *** Known Limitation: openweathermap API currently only accepts city name in the search field. It has no way of identifying U.S. state abbreviations. So, for cities with duplicate names one would have to provide the exact geo coordinates, or perhaps the city code. This limitaion is discussed here:
 https://openweathermap.desk.com/customer/portal/questions/16829365-state-is-missing-from-the-location-information-only-shows-city-this-is-critical-for-us-clients
 
+______________________________________________________________________________________________________________________________
 
 DEMO:
 https://aluma.github.io/your-weather-app/index.html
@@ -46,3 +47,4 @@ After weather search:
 <img src="https://i.ibb.co/NWgvG0v/Screen-Shot-2018-12-10-at-1-22-28-AM.png" alt="search result screenshot" border="0">
 <br>
 <br>
+______________________________________________________________________________________________________________________________
