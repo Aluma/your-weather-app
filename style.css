@@ -55,6 +55,13 @@ body, html {
     hyphens: auto;
 }
 
+.error-msg {
+    margin: 50px auto;
+    color: #6e0f0c;
+    text-align: center;
+    width: 75%;
+}
+
 h1 {
     color: #49494b;
 }
@@ -68,6 +75,8 @@ h1 {
     background-color: #49494b;
     text-align: center;
 }
+
+.hidden {display:none}
 
 #main {
     position: relative;

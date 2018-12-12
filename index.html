@@ -23,7 +23,7 @@
     <div role="heading"><h1 class="center">Your Weather App</h1></div>
     <header class="header">
         <div class="search">
-            <input id="search-txt" maxlength="45" minlength="2" placeholder="Enter City Name" type="text"
+            <input autofocus id="search-txt" maxlength="45" minlength="2" placeholder="Enter City Name Only" type="text"
                    role="searchbox" aria-label="enter city name here" required>
             <a href="#" id="search-btn" name="search button" role="button" aria-label="search button"><i
                     class="fas fa-search fa-lg">
@@ -32,6 +32,12 @@
     </header>
 
     <main id="main" role="main">
+        <div hidden class="error-msg hidden" id="client-error" role="alert">
+            Error: Problem on your end. Confirm correct location name. Otherwise, it could be your ISP, proxy, or network settings.
+        </div>
+        <div hidden class="error-msg hidden" id="server-error" role="alert">
+            Error: Problem on our end. Please try your search again after some time.
+        </div>
         <div class="city">
             <div class="city-icon-holder">
                 <div class="dont-break-out" id="city-name" aria-label="city name text"></div>

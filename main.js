@@ -3,9 +3,11 @@
 /* NOTE: In a real-world production app, we should obfuscate the apiKey behind an env variable */
 const apiKey = 'f24f40b1c24505685fce3b8acd0fcffc';
 const cityName = document.getElementById('city-name');
+const clientErrorMsg = document.getElementById('client-error');
 const icon = document.getElementById('icon');
 const searchButton = document.getElementById('search-btn');
 const searchInput = document.getElementById('search-txt');
+const serverErrorMsg = document.getElementById('server-error');
 const temperature = document.getElementById('temp');
 
 
@@ -28,9 +30,28 @@ const makeAsyncHttpRequest = (url) => {
         .then(response => {
             if (response.status !== 200) {
                 console.log('Looks like there was a problem. Status Code: ' + response.status);
+                if (response.status >= 400 && response.status <= 451) {
+                    clientErrorMsg.classList.remove('hidden');
+                    clientErrorMsg.removeAttribute('hidden');
+                    cityName.innerHTML = '';
+                    icon.src = '';
+                    temperature.innerHTML = '';
+                    return;
+                }
+                if (response.status >= 500 && response.status <= 511) {
+                    serverErrorMsg.classList.remove('hidden');
+                    serverErrorMsg.removeAttribute('hidden');
+                    cityName.innerHTML = '';
+                    icon.src = '';
+                    temperature.innerHTML = '';
+                }
                 return;
             }
             response.json().then(data => {
+                clientErrorMsg.classList.add('hidden');
+                clientErrorMsg.setAttribute('hidden', '');
+                serverErrorMsg.classList.add('hidden');
+                serverErrorMsg.setAttribute('hidden', '');
                 setWeatherResponse(data);
             });
         })
@@ -55,7 +76,7 @@ const getWeatherData = () => {
 };
 
 /**
- * @function
+ * @function - Checks if search is executed.
  * @param {object} event - global event object for tracking if the enter key was pressed
  */
 const isSearchExecuted = (event) => {
@@ -66,4 +87,3 @@ const isSearchExecuted = (event) => {
 
 searchInput.addEventListener('keyup', isSearchExecuted);
 searchButton.addEventListener('click', getWeatherData);
-searchButton.addEventListener('keyup', getWeatherData);
