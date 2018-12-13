@@ -1,24 +1,27 @@
 'use strict';
 
-/* NOTE: In a real-world production app, we should obfuscate the apiKey behind an env variable */
+/* NOTE: This is a publicly found API key. It is not mine. In a real-world production app, we should obfuscate the
+apiKey behind an env variable */
 const apiKey = 'f24f40b1c24505685fce3b8acd0fcffc';
+const city = document.getElementsByClassName('city');
 const cityName = document.getElementById('city-name');
 const clientErrorMsg = document.getElementById('client-error');
 const icon = document.getElementById('icon');
 const searchButton = document.getElementById('search-btn');
 const searchInput = document.getElementById('search-txt');
 const serverErrorMsg = document.getElementById('server-error');
-const temperature = document.getElementById('temp');
+const temp = document.getElementById('temp');
+const temperature = document.getElementsByClassName('temperature');
 
 
 /**
- * @function - Parses the weather data and grabs the city name, temperature and icon to display on the UI.
+ * @function - Parses the weather data and grabs the city name, temp and icon to display on the UI.
  * @param {string} data - Parsed JSON object with weather data.
  */
 const setWeatherResponse = (data) => {
     cityName.innerHTML = data.name;
     icon.src = 'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
-    temperature.innerHTML = parseInt(data.main.temp) + '°F';
+    temp.innerHTML = parseInt(data.main.temp) + '°F';
 };
 
 /**
@@ -28,35 +31,29 @@ const setWeatherResponse = (data) => {
 const makeAsyncHttpRequest = (url) => {
     fetch(url)
         .then(response => {
-            if (response.status !== 200) {
-                console.log('Looks like there was a problem. Status Code: ' + response.status);
-                if (response.status >= 400 && response.status <= 451) {
-                    clientErrorMsg.classList.remove('hidden');
-                    clientErrorMsg.removeAttribute('hidden');
-                    cityName.innerHTML = '';
-                    icon.src = '';
-                    temperature.innerHTML = '';
-                    return;
-                }
-                if (response.status >= 500 && response.status <= 511) {
-                    serverErrorMsg.classList.remove('hidden');
-                    serverErrorMsg.removeAttribute('hidden');
-                    cityName.innerHTML = '';
-                    icon.src = '';
-                    temperature.innerHTML = '';
-                }
-                return;
+            if (response.status >= 400 && response.status <= 451) {
+                city[0].classList.add('hidden');
+                temperature[0].classList.add('hidden');
+                clientErrorMsg.classList.remove('hidden');
+
             }
-            response.json().then(data => {
-                clientErrorMsg.classList.add('hidden');
-                clientErrorMsg.setAttribute('hidden', '');
-                serverErrorMsg.classList.add('hidden');
-                serverErrorMsg.setAttribute('hidden', '');
-                setWeatherResponse(data);
-            });
+            if (response.status >= 500 && response.status <= 511) {
+                city[0].classList.add('hidden');
+                temperature[0].classList.add('hidden');
+                serverErrorMsg.classList.remove('hidden');
+            }
+            if (response.ok) {
+                response.json().then(data => {
+                    city[0].classList.remove('hidden');
+                    temperature[0].classList.remove('hidden');
+                    clientErrorMsg.classList.add('hidden');
+                    serverErrorMsg.classList.add('hidden');
+                    setWeatherResponse(data);
+                });
+            }
         })
         .catch(err => {
-            console.log('Fetch Error :-S', err);
+            console.log('Fetch Error :---->', err);
         });
 };
 

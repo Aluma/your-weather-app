@@ -16,11 +16,13 @@
 </head>
 
 <body>
+
 <div class="container">
 
     <noscript>Please enable JavaScript in your browser so that this app can function correctly.</noscript>
 
     <div role="heading"><h1 class="center">Your Weather App</h1></div>
+
     <header class="header">
         <div class="search" role="search">
             <input autofocus id="search-txt" maxlength="45" minlength="2" placeholder="Enter City Name Only" type="text"
@@ -32,12 +34,7 @@
     </header>
 
     <main id="main" role="main">
-        <div hidden class="error-msg hidden" id="client-error" role="alert">
-            Error: Problem on your end. Confirm correct location name. Otherwise, it could be your ISP, proxy, or network settings.
-        </div>
-        <div hidden class="error-msg hidden" id="server-error" role="alert">
-            Error: Problem on our end. Please try your search again after some time.
-        </div>
+
         <div class="city">
             <div class="city-icon-holder">
                 <div class="dont-break-out" id="city-name" aria-label="city name text"></div>
@@ -45,11 +42,21 @@
             </div>
         </div>
         <div class="temperature">
-            <div class="dont-break-out" id="temp" aria-label="current temperature text" role=""></div>
+            <div class="dont-break-out" id="temp" aria-label="current temperature text"></div>
         </div>
+
+        <div class="error-msg hidden" id="client-error" role="alert">
+            Error: Problem on your end. Confirm correct location name. Otherwise, it could be your ISP, proxy, or
+            network settings.
+        </div>
+        <div class="error-msg hidden" id="server-error" role="alert">
+            Error: Problem on our end. Please try your search again after some time.
+        </div>
+
     </main>
 
 </div>
+
 <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
 <script src="main.js"></script>
 <script>
@@ -60,6 +67,7 @@
             });
     }
 </script>
+
 </body>
 
 </html>

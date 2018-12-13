@@ -1,3 +1,8 @@
+aside {
+    position: relative;
+    height: 50%;
+}
+
 body, html {
     background-color: #eee;
     width: 100%;
