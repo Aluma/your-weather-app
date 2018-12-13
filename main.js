@@ -46,8 +46,8 @@ const makeAsyncHttpRequest = (url) => {
                 response.json().then(data => {
                     city[0].classList.remove('hidden');
                     temperature[0].classList.remove('hidden');
-                    clientErrorMsg.classList.add('hidden');
-                    serverErrorMsg.classList.add('hidden');
+                    clientErrorMsg ? clientErrorMsg.classList.add('hidden') : '';
+                    serverErrorMsg ? serverErrorMsg.classList.add('hidden') : '';
                     setWeatherResponse(data);
                 });
             }
