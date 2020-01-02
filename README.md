@@ -11,6 +11,8 @@ HTML5
 CSS3
 ______________________________________________________________________________________________________________________________
 
+NOTE: I believe the publicly sourced API key that I'm using to access the openweathermap API is no longer working. I will commit a fix to this problem after an upcoming planned vacation. In any case, I strongly urge you to replace the 'const apiKey' on line 5 of the 'main.js' file with a reference to your own private API key that you can obtain for free from openweathermap.
+
 Instructions:
 
 1) Download the repo ZIP file, or clone the repo:
